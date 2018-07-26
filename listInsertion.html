@@ -1,36 +1,38 @@
 <!doctype html>
 <html>
-    <title>Move Canvas Block</title>
-    <style>
-        li:nth-child(3n){
-            color:red;
-        }
-        span{
-            color:red;
-        }
-    </style>
-    </head>
-    <input type="text" id="listValue">
-    <button id="insert" onclick="insertEle()">insert</button>
-    <div>
-        <ul id="dy-list"></ul>
-        <span id="err"></span>
-    </div>
-   
-    <script>
-        function insertEle(){
-        var errMsg = document.getElementById("err");   
-        var list=document.getElementById("dy-list");
+<title>Dynamic list</title>
+<style>
+    li:nth-child(3n) {
+        color: red;
+    }
+
+    span {
+        color: red;
+    }
+</style>
+</head>
+<input type="text" id="listValue">
+<button id="insert" onclick="insertEle()">insert</button>
+<div>
+    <ul id="dy-list"></ul>
+    <span id="err"></span>
+</div>
+
+<script>
+    function insertEle() {
+        var errMsg = document.getElementById("err");
+        var list = document.getElementById("dy-list");
         var li = document.createElement('li');
         var value = document.getElementById('listValue');
-        if(value.value!=""){
-        li.appendChild(document.createTextNode(value.value));
-        list.appendChild(li);
-        value.value= "";
-        errMsg.innerHTML ="";
-        }else{
-            errMsg.innerHTML="Input is empty";
+        if (value.value != "") {
+            li.appendChild(document.createTextNode(value.value));
+            list.appendChild(li);
+            value.value = "";
+            errMsg.innerHTML = "";
+        } else {
+            errMsg.innerHTML = "Input is empty";
         }
-        }
-    </script>
+    }
+</script>
+
 </html>
