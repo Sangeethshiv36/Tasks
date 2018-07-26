@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <canvas id="myCanvas" width="200" height="100" style="border:1px solid black;">
+        Your browser does not support the canvas element.
+    </canvas>
+
+    <button id="forw" onclick="moveFor()">forward</button>
+    <button id="back" onclick="moveBack()">backward</button>
+
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+        var xPos = 0;
+        var yPos = 0;
+        var width = 30;
+        var height = 30;
+        ctx.fillStyle = "#FF0000";
+        ctx.fillRect(xPos, yPos, width, height);
+
+        function moveFor(){
+            ctx.clearRect(xPos,yPos,width,height);
+            xPos+=canvas.width-width;
+            ctx.clearRect(xPos,yPos,width,height);
+            ctx.fillRect(xPos,yPos,width,height);
+            ctx.fillStyle="#FF0000";
+            
+        }
+    </script>
+
+</body>
+
+</html>
