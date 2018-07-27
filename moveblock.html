@@ -24,9 +24,25 @@
             ctx.clearRect(xPos,yPos,width,height);
             xPos+=canvas.width-width;
             ctx.clearRect(xPos,yPos,width,height);
+            if(xPos<=canvas.width-width && yPos == 0){
             ctx.fillRect(xPos,yPos,width,height);
             ctx.fillStyle="#FF0000";
-            
+            }else if (yPos>=canvas.height-height && xPos>canvas.width-width){
+                xPos=0;
+                ctx.fillRect(xPos,yPos,width,height);
+                ctx.fillStyle="#FF000";
+            }else if(yPos>=canvas.height-height && xPos>=canvas.width-width){
+                yPos=0;
+                xPos=0;
+                ctx.fillRect(xPos,yPos,width,height);
+                ctx.fillStyle="#FF000";
+            }
+            else{
+              xPos=canvas.width-width;
+              yPos=canvas.height-height;
+              ctx.fillRect(xPos,yPos,width,height);
+              ctx.fillStyle="#FF0000";
+            }
         }
     </script>
 
